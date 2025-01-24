@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="add.css">
+    <style>
+        :root {
+            --background-color: #0d1117;
+            --container-bg: #1e293b;
+            --text-color: #ffffff;
+            --button-bg: #2563eb;
+            --button-hover-bg: #1e40af;
+            --edit-btn-bg: #f59e0b;
+            --delete-btn-bg: #dc2626;
+            --todo-bg: #334155;
+            --input-bg: #2d3748;
+        }
+
+        .light-mode {
+            --background-color: #edf2f7;
+            --container-bg: #ffffff;
+            --text-color: #333333;
+            --button-bg: #4CAF50;
+            --button-hover-bg: #3e8e41;
+            --edit-btn-bg: #ffb703;
+            --delete-btn-bg: #e63946;
+            --todo-bg: #f7fafc;
+            --input-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #todos {
+            width: 400px;
+            padding: 30px;
+            background-color: var(--container-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background-color: var(--button-bg);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: var(--button-hover-bg);
+            transform: scale(1.05);
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .todo-item-container {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: var(--todo-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .todo-item-box {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--text-color);
+            word-break: break-word;
+            flex: 1;
+        }
+
+        .todo-item-box.completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .todo-item-actions {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .todo-item-actions .edit-btn {
+            background-color: var(--edit-btn-bg);
+        }
+
+        .todo-item-actions .delete-btn {
+            background-color: var(--delete-btn-bg);
+        }
+
+        .todo-item-container input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav><button id="mode-toggle" onclick="toggleMode()">Switch to Light Mode</button></nav>
+
+    <nav><h1>ToDo List</h1></nav>
+    <div id="todos">
+        <div id="todo-list">
+            <!-- Dynamic ToDo items will be added here by JavaScript -->
+        </div>
+        <div>
+            <input type="text" id="input1" placeholder="Enter new todo">
+            <button onclick="addEle()" id="add">Add</button>
+        </div>
+    </div>
+    <script src="todo.js">
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Default dark mode (initial state) */
+:root {
+    --background-color: #0d1117;
+    --container-bg: #1e293b;
+    --text-color: #ffffff;
+    --button-bg: #2563eb;
+    --button-hover-bg: #1e40af;
+    --edit-btn-bg: #f59e0b;
+    --delete-btn-bg: #dc2626;
+    --todo-bg: #334155;
+    --input-bg: #2d3748;
+}
+
+/* Light mode styles */
+.light-mode {
+    --background-color: #edf2f7;
+    --container-bg: #ffffff;
+    --text-color: #333333;
+    --button-bg: #4CAF50;
+    --button-hover-bg: #3e8e41;
+    --edit-btn-bg: #ffb703;
+    --delete-btn-bg: #e63946;
+    --todo-bg: #f7fafc;
+    --input-bg: #ffffff;
+}
+
+/* Apply theme to elements */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* ToDo container */
+#todos {
+    width: 400px;
+    padding: 30px;
+    background-color: var(--container-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+}
+
+/* ToDo item styling */
+#todo-list div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: var(--todo-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Input field styling */
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+/* Edit button */
+.edit-btn {
+    background-color: var(--edit-btn-bg);
+}
+
+/* Delete button */
+.delete-btn {
+    background-color: var(--delete-btn-bg);
+}
